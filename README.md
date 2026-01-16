@@ -47,6 +47,26 @@ Required inputs in the UI:
 
 Optional: toggle "Use session key for signing" after creating one.
 
+## Deploy contracts (Arbitrum Sepolia)
+
+Set env vars (example):
+
+```sh
+export ARBITRUM_SEPOLIA_RPC_URL="https://sepolia-rollup.arbitrum.io/rpc"
+export ARBITRUM_SEPOLIA_PRIVATE_KEY="0x..."
+export ENTRYPOINT_ADDRESS="0x..."
+export OWNER_ADDRESS="0x..." # optional, defaults to deployer
+```
+
+Deploy:
+
+```sh
+pnpm hardhat compile
+pnpm hardhat run scripts/deploy.ts --network arbitrumSepolia
+```
+
+This prints the deployed `PolicyManager`, `SessionKeyManager`, and `SmartAccount` addresses.
+
 ## Demo flows
 
 - **Landing**: connect wallet, paste addresses, fund the smart account
